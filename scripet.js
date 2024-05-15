@@ -29,17 +29,23 @@ function GetName(){
     else if(!male.checked && female.checked){
         gender="F";
     }
-    else{
+    else if((male.checked && female.checked)||(!male.checked && !female.checked)){
         window.alert("Checked gender");
+        return ;
     }
-
     patnerName(gender,inputname.value);
-    if(!patner1){
-        patnerBox.innerHTML=`${inputname.value} you always be single `;
-    }
-    else{
-        patnerBox.innerHTML=`${patner1} + ${inputname.value}`;
-    }
+        if(!inputname.value){
+            window.alert("Enter name first");
+            return;
+        }
+        else if(!patner1){
+            patnerBox.innerHTML=`${inputname.value} you always be single `;
+            patnerBox.style.display="block";
+        }
+        else{
+            patnerBox.innerHTML=`${patner1} + ${inputname.value}`;
+            patnerBox.style.display="block";
+        }
 }
 
 //patnerName("M", "ankan");
