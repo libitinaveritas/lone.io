@@ -46,7 +46,26 @@ function GetName(){
             patnerBox.innerHTML=`${patner1} + ${inputname.value}`;
             patnerBox.style.display="block";
         }
+};
+
+function reponsive(){
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    if(w<=615 && w>559){
+        patnerBox.style.height="70px";
+        patnerBox.style.fontSize = "xx-large";
+    }
+    else if(w<=559 && w>270){
+        patnerBox.style.fontSize = "small";
+        patnerBox.style.height="20px";
+    }
+    else if(w<=269){
+        patnerBox.style.height="40px";
+    }
+    console.log(w,h);
 }
+
+reponsive();
 
 //patnerName("M", "ankan");
 
